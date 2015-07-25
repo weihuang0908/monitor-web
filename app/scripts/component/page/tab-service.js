@@ -5,13 +5,16 @@ angular.module('parkProgApp').factory('tabFactory',
     function ($http) {
         var baseUrl = "jsons/";
         var service = {};
-        service.getTabs = function(id){
+        service.getJson = function(id){
             return $http({
                 method:'GET',
                 url:baseUrl + id + '.json'
             }).success(function(resp){
                 return resp;
             });
+        };
+        service.getQueryOption = function(tab){
+            options = tab.query_option;
         };
         return service;
     });

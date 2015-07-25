@@ -4,7 +4,7 @@
 angular.module('parkProgApp').controller('ParkReportCtrl', ['$scope', '$http', '$rootScope', 'tabFactory',
     function ($scope, $http, $rootScope, tabFactory) {
         var fresh = function(){
-            tabFactory.getTabs($rootScope.submeau.id).then(function (resp) {
+            tabFactory.getJson($rootScope.submeau.id).then(function (resp) {
                 $scope.tabMeta = resp.data;
                 $scope.currentTab = $scope.tabMeta[0];
             });
@@ -13,4 +13,8 @@ angular.module('parkProgApp').controller('ParkReportCtrl', ['$scope', '$http', '
         fresh();
 //        每次submeau变化时，执行刷新
         $scope.$watch('submeau',fresh);
+
+        $scope.onClickTab = function(tab){
+            $scope.currentTab = tab;
+        }
     }]);

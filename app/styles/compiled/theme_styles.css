@@ -11,7 +11,7 @@ html, body {
 
 body {
     color: #344644;
-    background: url("../../img/whitey.jpg") repeat scroll 0 0 #fff;
+    /*background: url("../../images/yeoman.png") repeat scroll 0 0 #fff;*/
     background-size: 220px 220px;
 }
 
@@ -2105,6 +2105,7 @@ label {
 }
 
 .form-control {
+    height: 30px;
     border-radius: 3px;
     background-clip: padding-box;
     border-color: #e7ebee;
@@ -5265,10 +5266,6 @@ input[type="radio"] {
 .the-icons .glyphicon {
     width: 30px;
     text-align: center;
-}
-
-.tabs-wrapper .nav-tabs {
-    margin-bottom: 15px;
 }
 
 .tabs-wrapper .tab-content {

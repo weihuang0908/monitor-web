@@ -4,9 +4,7 @@ $(function ($) {
     setTimeout(function () {
         $('#content-wrapper > .row').css({opacity: 1});
     }, 200);
-    console.log('lala');
-    $('#sidebar-nav .dropdown-toggle').on('click', function (e) {
-
+    $('body ').on('click', '#sidebar-nav .dropdown-toggle',function (e) {
         e.preventDefault();
         var $item = $(this).parent();
         if (!$item.hasClass('open')) {

@@ -15,16 +15,15 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar-nav">
                 <ul class="nav nav-pills nav-stacked">
-                    <li ng-repeat="line in meauList">
-                        <a class="dropdown-toggle"
-                            ng-click="onClickMeau()">
-                            <i class="fa fa-table"></i>
-                            <span>{{line["name"]}}</span>
+                    <li ng-repeat="meau in meauList">
+                        <a class="dropdown-toggle">
+                            <i class="fa {{meau.icon}}" ></i>
+                            <span>{{meau["name"]}}</span>
                             <i class="fa fa-chevron-circle-right drop-icon"></i>
                         </a>
-                        <ul class="submenu" style="display: block">
-                            <li ng-repeat="submeau in line.submeau">
-                                <a ng-click="onClickSubmeau(submeau)" ng-class="{active:isActive(submeau.name)}">
+                        <ul class="submenu">
+                            <li ng-repeat="submeau in meau.submeau">
+                                <a ng-click="onClickSubmeau(meau.name,submeau)" ng-class="{active:isActive(submeau.name)}">
                                     {{submeau.name}}
                                 </a>
                             </li>

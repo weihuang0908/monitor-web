@@ -1,5 +1,79 @@
 [
     {
-        "name":"用户操作日志"
+        "name":"用户操作日志",
+        "export": true,
+        "query_option": [
+            {
+                "label": "站点名",
+                "type": "default_select",
+                "options": [
+                    "本地"
+                ]
+            },
+            {
+                "label": "事件类型",
+                "type": "default_select",
+                "options": [
+                    "所有"
+                    , "操作日志"
+                    , "事件日志"
+                ],
+                "default": 1
+            },
+            {
+                "label": "事件子类型",
+                "type": "default_select",
+                "options": [
+                    "所有"
+                ],
+                "default": 1
+            },
+            {
+                "label": "操作员",
+                "type": "default_select",
+                "options": [
+                    "所有"
+                    ,"zfd"
+                ],
+                "default": 0
+            },
+            {
+                "label": "事件内容",
+                "type": "input"
+            },
+            {
+                "label":"",
+                "type":"group",
+                "contents":[
+                    {
+                        "label": "操作时间范围",
+                        "type": "date_picker",
+                        "default": "today"
+                    },
+                    {
+                        "label": "到",
+                        "type": "date_picker",
+                        "default": "today"
+                    }
+                ]
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "站点名",
+                    "事件分类",
+                    "事件子类型",
+                    "操作内容",
+                    "操作员",
+                    "操作时间",
+                    "结果",
+                    "电脑ip"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
     }
 ]

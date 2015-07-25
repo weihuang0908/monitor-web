@@ -6,6 +6,13 @@
             <div id="content-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
+                        <!--面包屑导航-->
+                        <ol class="breadcrumb" style="margin-bottom: 10px">
+                            <li><a href="#/main">主页</a></li>
+                            <li>{{meauName}}</li>
+                            <li>{{submeau.name}}</li>
+                            <!--<li class="active"><span>{{currentTab.name}}</span></li>-->
+                        </ol>
                         <ng-include src="'views/component/page/'+ submeau.page +'.html'"></ng-include>
                     </div>
                 </div>
