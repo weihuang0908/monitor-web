@@ -1,16 +1,19 @@
 [
     {
         "name": "总财务查询",
+        "id" : "1",
         "export": true,
         "query_option": [
             {
                 "label": "站点",
+                "key": "site",
                 "type": "default_select",
                 "options": ["本地"],
                 "default": 0
             },
             {
                 "label": "统计方式",
+                "key":"stat_method",
                 "type": "default_select",
                 "options": [
                     "按日统计"
@@ -22,6 +25,7 @@
             },
             {
                 "label": "起始时间",
+                "key": "begin_time",
                 "type": "date_picker",
                 "default": "today"
             }
@@ -50,15 +54,18 @@
     },
     {
         "name": "当班收费查询",
+        "id":"2",
         "export": true,
         "query_option": [
             {
                 "label": "车牌",
+                "key" : "car_no",
                 "type": "input",
                 "place_holder": ""
             },
             {
                 "label": "车型",
+                "key" : "car_mode",
                 "type": "default_select",
                 "options": [
                     "所有"
@@ -71,6 +78,7 @@
             },
             {
                 "label": "操作员",
+                "key" : "operator",
                 "type": "default_select",
                 "options": [
                     "所有"
@@ -80,6 +88,7 @@
             },
             {
                 "label": "",
+                "key" : "option_method",
                 "type": "default_select",
                 "options": [
                     "扣费时间"
@@ -90,11 +99,13 @@
             },
             {
                 "label": "起始时间",
+                "key" : "begin_time",
                 "type": "date_picker",
                 "default": "today"
             },
             {
                 "label": "终止时间",
+                "key" : "end_time",
                 "type": "date_picker",
                 "default": "today"
             }
@@ -124,16 +135,19 @@
     },
     {
         "name": "固定车缴费查询",
+        "id" : "3",
         "export": true,
         "query_option": [
             {
                 "label": "站点",
+                "key":"site",
                 "type": "default_select",
                 "options": ["本地"],
                 "default": 0
             },
             {
                 "label": "统计方式",
+                "key" : "stat_method",
                 "type": "default_select",
                 "options": [
                     "按日统计"
@@ -145,6 +159,7 @@
             },
             {
                 "label": "起始时间",
+                "key" : "begin_time",
                 "type": "date_picker",
                 "default": "today"
             }

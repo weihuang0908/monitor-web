@@ -1,12 +1,4 @@
 <div class="col-lg-12" ng-controller="ParkReportCtrl">
-    <!--&lt;!&ndash;面包屑导航&ndash;&gt;-->
-    <!--<ol class="breadcrumb" style="margin-bottom: 10px">-->
-        <!--<li><a href="#/main">主页</a></li>-->
-        <!--<li>停车场报表</li>-->
-        <!--<li>{{submeau.name}}</li>-->
-        <!--<li class="active"><span>{{currentTab.name}}</span></li>-->
-    <!--</ol>-->
-    <!--tab-->
     <div class="main-box clearfix">
         <div class="tabs-wrapper profile-tabs">
             <ul class="nav nav-tabs">
@@ -18,24 +10,23 @@
                 <div class="col-lg-12 tab-pane active">
                     <div class="main-box-body clearfix">
                         <h3 style="margin-top: 10px"><span>查询条件</span></h3>
-                        <form class="form-inline" role="form">
+                        <form class="form-inline" role="form" ng-submit="onSubmit()">
                             <div class="form-group" ng-repeat="option in currentTab.query_option"
-                                 style="margin-right: 10px; margin-bottom: 5px">
+                                  style="margin-right: 10px; margin-bottom: 5px">
                                 <!-- no group -->
                                 <label>{{option.label}}</label>
                                 <span ng-switch on="option.type">
                                     <span ng-switch-when="default_select">
-                                        <select class="form-control">
-                                            <option ng-repeat="o in option.options">{{o}}</option>
+                                        <select class="form-control" ng-model="$parent.query[option.key]"
+                                                ng-options="obj as obj for obj in option.options">
                                         </select>
                                     </span>
                                     <span ng-switch-when="input">
-                                         <input type="password" class="form-control">
+                                         <input type="text" class="form-control" ng-model="$parent.query[option.key]">
                                     </span>
                                     <span ng-switch-when="date_picker">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="datepickerDate">
-                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <div class="input-group date" id="datetimepicker">
+                                            <input type="date" class="form-control" ng-model="$parent.query[option.key]">
                                         </div>
                                     </span>
                                     <!-- group -->
@@ -44,17 +35,17 @@
                                             <label>{{content.label}}</label>
                                             <span ng-switch on="content.type">
                                                 <span ng-switch-when="default_select">
-                                                <select class="form-control">
-                                                    <option ng-repeat="opt in content.options">{{opt}}</option>
+                                                <select class="form-control" ng-model = "$parent.query[content.key]"
+                                                        ng-options="obj as obj for obj in content.options">
                                                 </select>
                                                 </span>
                                                 <span ng-switch-when="input">
-                                                     <input type="text" class="form-control">
+                                                     <input type="text" class="form-control" ng-model="$parent.query[content.key]">
                                                 </span>
                                                 <span ng-switch-when="date_picker">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="datepickerDate">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                    <input type="date" class="form-control" id="datetimepicker"
+                                                           ng-model="$parent.query[content.key]">
                                                 </div>
                                                 </span>
                                             </span>
@@ -81,9 +72,9 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr role="row" class="even">
+                                    <tr role="row" class="even" ng-repeat="line in query_result[submeau.id + currentTab.id]|limitTo:show_entries_num">
                                         <td ng-repeat="table_head in currentTab.view_option.table.table_head">
-                                            value {{table_head}}
+                                          {{line[table_head]}}
                                         </td>
                                     </tr>
                                     </tbody>
@@ -113,12 +104,8 @@
                                     <label>
                                         Show
                                         <select name="table-example-fixed_length"
-                                                aria-controls="table-example-fixed"
-                                                class="">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
+                                                ng-model="show_entries_num"
+                                                ng-options="obj as obj for obj in [10,20,30,40]">
                                         </select>
                                         entries
                                     </label>

@@ -468,7 +468,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     float: left;
     display: block;
     margin-right: 3px;
-    font-size: em;
+    font-size: 1em;
 }
 
 #header-nav .form-control {
@@ -481,7 +481,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     margin-left: 0;
 }
 
-#header-navbar .nav > li > a {
+#header-navbar .nav > li > a,#header-navbar .nav > li > span {
     font-size: 0.875em;
     padding-left: 18px;
     padding-right: 18px;
@@ -7978,7 +7978,7 @@ svg {
     color: #16191c;
 }
 
-.theme-whbl #header-navbar .nav > li > a {
+.theme-whbl #header-navbar .nav > li > a,.theme-whbl #header-navbar .nav > li > span {
     color: #fff;
 }
 

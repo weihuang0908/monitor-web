@@ -1,0 +1,22 @@
+<!-- group -->
+<span ng-switch-when="group">
+<div class="form-group" ng-repeat="content in option.contents"
+     style="margin-bottom: 5px">
+    <label>{{content.label}}</label>
+    <span ng-switch on="content.type">
+        <span ng-switch-when="default_select">
+        <select class="form-control">
+            <option ng-repeat="opt in content.options">{{opt}}</option>
+        </select>
+        </span>
+        <span ng-switch-when="input">
+             <input type="text" class="form-control">
+        </span>
+        <span ng-switch-when="date_picker">
+        <div class="input-group">
+            <input type="date" class="form-control" id="datetimepicker">
+        </div>
+        </span>
+    </span>
+</div>
+</span>

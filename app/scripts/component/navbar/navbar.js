@@ -11,8 +11,5 @@ angular.module('parkProgApp').controller('NavbarCtrl', ['$scope', '$http','$root
             return(name == $rootScope.submeau.name);
         };
 
-//        header
-        $scope.makeSmallNav = function(){
-            $('#page-wrapper').toggleClass('nav-small');
-        };
+
     }]);

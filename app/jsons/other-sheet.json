@@ -1,10 +1,12 @@
 [
     {
         "name":"出入场车辆查询",
+        "id":"1",
         "export": true,
         "query_option": [
             {
                 "label": "出入状态",
+                "key":"io_status",
                 "type": "default_select",
                 "options": [
                     "本地"
@@ -15,6 +17,7 @@
             },
             {
                 "label": "车主性质",
+                "key":"car_owner_status",
                 "type": "default_select",
                 "options": [
                     "临时车主"
@@ -30,6 +33,7 @@
                     {
                         "label": "",
                         "type": "default_select",
+                        "key":"car_id_status",
                         "options": [
                             "进场车牌"
                             , "出场车牌"
@@ -39,6 +43,7 @@
                     },
                     {
                         "label": "",
+                        "key":"car_id",
                         "type": "input",
                         "default": 1
                     }
@@ -47,6 +52,7 @@
             {
                 "label": "出场方式",
                 "type": "default_select",
+                "key":"io_method",
                 "options": [
                     "所有"
                     , "系统放行"
@@ -62,6 +68,7 @@
             },
             {
                 "label": "入口通道",
+                "key":"in_channel",
                 "type": "default_select",
                 "options": [
                     "所有"
@@ -71,6 +78,7 @@
             },
             {
                 "label": "出口通道",
+                "key":"out_channel",
                 "type": "default_select",
                 "options": [
                     "所有"
@@ -84,6 +92,7 @@
                 "contents":[
                     {
                         "label": "金额",
+                        "key":"charge_status",
                         "type": "default_select",
                         "options": [
                             "应收"
@@ -93,6 +102,7 @@
                     },
                     {
                         "label": "",
+                        "key":"eqlq",
                         "type": "default_select",
                         "options": [
                             "大于"
@@ -103,12 +113,14 @@
                     },
                     {
                         "label": "",
+                        "key":"money",
                         "type": "input"
                     }
                 ]
             },
             {
                 "label": "收费员",
+                "key":"charger",
                 "type": "default_select",
                 "options": [
                     "所有"
@@ -122,6 +134,7 @@
                 ,"contents":[
                 {
                     "label": "时间范围",
+                    "key":"time_interval",
                     "type": "default_select",
                     "options": [
                         "入场和出场"
@@ -132,11 +145,13 @@
                 },
                 {
                     "label": "",
+                    "key":"time_begin",
                     "type": "date_picker",
                     "default": "today"
                 },
                 {
                     "label": "到",
+                    "key":"time_end",
                     "type": "date_picker",
                     "default": "today"
                 }
@@ -172,17 +187,20 @@
     },
     {
         "name":"车主信息查询",
+        "id":"2",
         "export": true,
         "query_option": [
             {
                 "label": "站点",
                 "type": "default_select",
+                "key":"site",
                 "options": ["本地"],
                 "default": 0
             },
             {
                 "label": "统计方式",
                 "type": "default_select",
+                "key":"stat_method",
                 "options": [
                     "按日统计"
                     , "按月统计"
@@ -193,6 +211,7 @@
             },
             {
                 "label": "起始时间",
+                "key":"begin_time",
                 "type": "date_picker",
                 "default": "today"
             }
