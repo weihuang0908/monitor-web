@@ -18,7 +18,7 @@
                                 <span ng-switch on="option.type">
                                     <span ng-switch-when="default_select">
                                         <select class="form-control" ng-model="$parent.query[option.key]"
-                                                ng-options="obj as obj for obj in option.options">
+                                                ng-options="obj.id as obj.label for obj in option.options">
                                         </select>
                                     </span>
                                     <span ng-switch-when="input">
@@ -36,7 +36,7 @@
                                             <span ng-switch on="content.type">
                                                 <span ng-switch-when="default_select">
                                                 <select class="form-control" ng-model = "$parent.query[content.key]"
-                                                        ng-options="obj as obj for obj in content.options">
+                                                        ng-options="obj.id as obj.label for obj in content.options">
                                                 </select>
                                                 </span>
                                                 <span ng-switch-when="input">

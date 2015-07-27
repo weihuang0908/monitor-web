@@ -30,7 +30,6 @@ angular.module('parkProgApp').controller('ParkReportCtrl', ['$scope', '$http', '
             console.log($scope.query);
             queryFactory.sendQuery(url,$scope.query).then(function (resp) {
                 $scope.query_result[url] = resp.data;
-                console.log($scope.query_result);
             });
         };
 

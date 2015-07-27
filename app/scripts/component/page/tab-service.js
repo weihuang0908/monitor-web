@@ -17,10 +17,10 @@ angular.module('parkProgApp').factory('tabFactory',
         parseDefault = function(option){
             if(option.type=='default_select'){
                 if(option.default){
-                    return option.options[option.default];
+                    return option.options[option.default].id;
                 }
                 else{
-                    return option.options[0];
+                    return option.options[0].id;
                 }
 
             }

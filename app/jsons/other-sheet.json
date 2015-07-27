@@ -9,9 +9,18 @@
                 "key":"io_status",
                 "type": "default_select",
                 "options": [
-                    "本地"
-                    ,"入场"
-                    ,"出场"
+                    {
+                        "id":"0",
+                        "label":"本地"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"入场"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"出场"
+                    }
                 ],
                 "default": 0
             },
@@ -20,9 +29,18 @@
                 "key":"car_owner_status",
                 "type": "default_select",
                 "options": [
-                    "临时车主"
-                    , "月卡车主"
-                    , "会员临停"
+                    {
+                        "id":"0",
+                        "label":"临时车主"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"月卡车主"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"会员临停"
+                    }
                 ],
                 "default": 1
             },
@@ -35,9 +53,18 @@
                         "type": "default_select",
                         "key":"car_id_status",
                         "options": [
-                            "进场车牌"
-                            , "出场车牌"
-                            , "登记车牌"
+                            {
+                                "id":"0",
+                                "label":"进场车牌"
+                            }
+                            ,{
+                                "id":"1",
+                                "label":"出场车牌"
+                            }
+                            ,{
+                                "id":"2",
+                                "label":"登记车牌"
+                            }
                         ],
                         "default": 1
                     },
@@ -54,15 +81,42 @@
                 "type": "default_select",
                 "key":"io_method",
                 "options": [
-                    "所有"
-                    , "系统放行"
-                    , "手动放行"
-                    ,"免费放行"
-                    ,"人工匹配放行"
-                    ,"保安未确认"
-                    ,"商圈出场"
-                    ,"中央收费出场"
-                    ,"最大收费出场"
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"系统放行"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"手动放行"
+                    }
+                    ,{
+                        "id":"3",
+                        "label":"免费放行"
+                    }
+                    ,{
+                        "id":"4",
+                        "label":"人工匹配放行"
+                    }
+                    ,{
+                        "id":"5",
+                        "label":"保安未确认"
+                    }
+                    ,{
+                        "id":"6",
+                        "label":"商圈出场"
+                    }
+                    ,{
+                        "id":"7",
+                        "label":"中央收费出场"
+                    }
+                    ,{
+                        "id":"8",
+                        "label":"最大收费出场"
+                    }
                 ],
                 "default": 1
             },
@@ -71,8 +125,14 @@
                 "key":"in_channel",
                 "type": "default_select",
                 "options": [
-                    "所有"
-                    , "入口"
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"入口"
+                    }
                 ],
                 "default": 1
             },
@@ -81,8 +141,14 @@
                 "key":"out_channel",
                 "type": "default_select",
                 "options": [
-                    "所有"
-                    , "出口"
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"出口"
+                    }
                 ],
                 "default": 1
             },
@@ -95,8 +161,14 @@
                         "key":"charge_status",
                         "type": "default_select",
                         "options": [
-                            "应收"
-                            , "实收"
+                            {
+                                "id":"0",
+                                "label":"应收"
+                            }
+                            ,{
+                                "id":"1",
+                                "label":"实收"
+                            }
                         ],
                         "default": 1
                     },
@@ -105,9 +177,18 @@
                         "key":"eqlq",
                         "type": "default_select",
                         "options": [
-                            "大于"
-                            , "小于"
-                            , "等于"
+                            {
+                                "id":"0",
+                                "label":"大于"
+                            }
+                            ,{
+                                "id":"1",
+                                "label":"小于"
+                            }
+                            ,{
+                                "id":"2",
+                                "label":"等于"
+                            }
                         ],
                         "default": 1
                     },
@@ -123,8 +204,14 @@
                 "key":"charger",
                 "type": "default_select",
                 "options": [
-                    "所有"
-                    , "zfd"
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"zfd"
+                    }
                 ],
                 "default": 1
             },
@@ -137,9 +224,18 @@
                     "key":"time_interval",
                     "type": "default_select",
                     "options": [
-                        "入场和出场"
-                        , "入场"
-                        , "出场"
+                        {
+                            "id":"0",
+                            "label":"入场和出场"
+                        }
+                        ,{
+                            "id":"1",
+                            "label":"入场"
+                        }
+                        ,{
+                            "id":"2",
+                            "label":"出场"
+                        }
                     ],
                     "default": 1
                 },
@@ -194,7 +290,12 @@
                 "label": "站点",
                 "type": "default_select",
                 "key":"site",
-                "options": ["本地"],
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"本地"
+                    }
+                ],
                 "default": 0
             },
             {
@@ -202,10 +303,22 @@
                 "type": "default_select",
                 "key":"stat_method",
                 "options": [
-                    "按日统计"
-                    , "按月统计"
-                    , "按季统计"
-                    , "按年统计"
+                    {
+                        "id":"0",
+                        "label":"按日统计"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"按月统计"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"按季统计"
+                    }
+                    ,{
+                        "id":"3",
+                        "label":"按年统计"
+                    }
                 ],
                 "default": 1
             },

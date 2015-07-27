@@ -8,7 +8,12 @@
                 "label": "站点",
                 "key": "site",
                 "type": "default_select",
-                "options": ["本地"],
+                "options": [
+                    {
+                     "id":"0",
+                     "label":"本地"
+                    }
+                ],
                 "default": 0
             },
             {
@@ -16,10 +21,18 @@
                 "key":"stat_method",
                 "type": "default_select",
                 "options": [
-                    "按日统计"
-                    , "按月统计"
-                    , "按季统计"
-                    , "按年统计"
+                    {
+                        "id":"0",
+                        "label":"按日统计"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"按季统计"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"按年统计"
+                    }
                 ],
                 "default": 1
             },
@@ -68,11 +81,26 @@
                 "key" : "car_mode",
                 "type": "default_select",
                 "options": [
-                    "所有"
-                    , "小车"
-                    , "大车"
-                    , "超大车"
-                    ,"其他车"
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"小车"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"大车"
+                    }
+                    ,{
+                        "id":"3",
+                        "label":"超大车"
+                    }
+                    ,{
+                        "id":"4",
+                        "label":"其他车"
+                    }
                 ],
                 "default": 0
             },
@@ -81,8 +109,14 @@
                 "key" : "operator",
                 "type": "default_select",
                 "options": [
-                    "所有"
-                    , "zfd"
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"zfd"
+                    }
                 ],
                 "default": 0
             },
@@ -91,9 +125,18 @@
                 "key" : "option_method",
                 "type": "default_select",
                 "options": [
-                    "扣费时间"
-                    , "有效期起"
-                    , "有效期止"
+                    {
+                        "id":"0",
+                        "label":"扣费时间"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"有效期起"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"有效期止"
+                    }
                 ],
                 "default": 0
             },
@@ -142,7 +185,12 @@
                 "label": "站点",
                 "key":"site",
                 "type": "default_select",
-                "options": ["本地"],
+                "options": [
+                    {
+                        "id":0,
+                        "label":"本地"
+                    }
+                ],
                 "default": 0
             },
             {
@@ -150,10 +198,18 @@
                 "key" : "stat_method",
                 "type": "default_select",
                 "options": [
-                    "按日统计"
-                    , "按月统计"
-                    , "按季统计"
-                    , "按年统计"
+                    {
+                        "id":"0",
+                        "label":"按日统计"
+                    },
+                    {
+                        "id":"1",
+                        "label":"按季统计"
+                    },
+                    {
+                        "id":"2",
+                        "label":"按年统计"
+                    }
                 ],
                 "default": 1
             },
