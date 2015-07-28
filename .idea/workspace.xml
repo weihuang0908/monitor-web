@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parking-report.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="parking-report.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/component/page/parking-report.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67321175" vertical-offset="735" max-vertical-offset="1815">
-              <caret line="81" column="79" selection-start-line="81" selection-start-column="79" selection-end-line="81" selection-end-column="79" />
+            <state vertical-scroll-proportion="-5.0" vertical-offset="735" max-vertical-offset="1815">
+              <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -46,10 +46,23 @@
       <file leaf-file-name="theme_styles.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/compiled/theme_styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.807693" vertical-offset="28838" max-vertical-offset="128880">
-              <caret line="1943" column="20" selection-start-line="1943" selection-start-column="20" selection-end-line="1943" selection-end-column="20" />
+            <state vertical-scroll-proportion="-15.269231" vertical-offset="28748" max-vertical-offset="128895">
+              <caret line="1943" column="23" selection-start-line="1943" selection-start-column="23" selection-end-line="1943" selection-end-column="23" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.34507042" vertical-offset="115" max-vertical-offset="825">
+              <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -130,15 +143,15 @@
         <option value="$PROJECT_DIR$/app/jsons/other-sheet.json" />
         <option value="$PROJECT_DIR$/app/jsons/event-sheet.json" />
         <option value="$PROJECT_DIR$/app/jsons/test/event-sheet1.json" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/component/page/pager-service.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/component/filter/slice-filter.js" />
         <option value="$PROJECT_DIR$/app/scripts/component/page/parking-report.js" />
         <option value="$PROJECT_DIR$/app/jsons/test/finacial-sheet1.json" />
-        <option value="$PROJECT_DIR$/app/styles/compiled/theme_styles.css" />
         <option value="$PROJECT_DIR$/app/views/component/page/parking-report.html" />
+        <option value="$PROJECT_DIR$/app/styles/compiled/theme_styles.css" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -928,17 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6126761" vertical-offset="0" max-vertical-offset="825">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36635005" vertical-offset="0" max-vertical-offset="737">
@@ -1003,20 +1005,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/compiled/theme_styles.css">
+    <entry file="file://$PROJECT_DIR$/app/views/component/page/parking-report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.807693" vertical-offset="28838" max-vertical-offset="128880">
-          <caret line="1943" column="20" selection-start-line="1943" selection-start-column="20" selection-end-line="1943" selection-end-column="20" />
+        <state vertical-scroll-proportion="-5.0" vertical-offset="735" max-vertical-offset="1815">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/component/page/parking-report.html">
+    <entry file="file://$PROJECT_DIR$/app/styles/compiled/theme_styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67321175" vertical-offset="735" max-vertical-offset="1815">
-          <caret line="81" column="79" selection-start-line="81" selection-start-column="79" selection-end-line="81" selection-end-column="79" />
+        <state vertical-scroll-proportion="-15.269231" vertical-offset="28748" max-vertical-offset="128895">
+          <caret line="1943" column="23" selection-start-line="1943" selection-start-column="23" selection-end-line="1943" selection-end-column="23" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34507042" vertical-offset="115" max-vertical-offset="825">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>

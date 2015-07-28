@@ -17,12 +17,12 @@ Running `grunt test` will run the unit tests with karma.
 安装过程比较漫长，耐心等待
 
  1/ 下载安装node
- 2/ node install -g bower
- 3/ node install -g grunt-cli
+ 2/ npm install -g bower
+ 3/ npm install -g grunt-cli
  4/ 进入程序目录,如
     cd park-prog/
- 5/ node install grunt
- 6/ node install
+ 5/ npm install grunt
+ 6/ npm install
  7/ bower install
  
  安装结束之后
