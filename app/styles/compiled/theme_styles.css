@@ -1578,6 +1578,10 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     background-clip: padding-box;
 }
 
+.pagination > li > a, .pagination > li > span{
+   border: 0;
+}
+
 .pagination > li > a, .pagination > li > span, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus, .pagination > li > a:active, .pagination > li > span:active {
     color: #3498db;
 }
@@ -1930,6 +1934,16 @@ blockquote.pull-right:before {
 
 .table a.table-link.danger:hover {
     color: #c0392b;
+}
+
+.dataTable{
+    table-layout: fixed;
+}
+.dataTable tbody tr td{
+    width:100%;
+    overflow:scroll;
+    word-break: keep-all;
+    white-space: nowrap
 }
 
 .dataTable thead th:hover {

@@ -15,7 +15,9 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
+        'ngTouch',
+        'ui.bootstrap',
+        'sliceFilter'
     ])
     .config(function ($routeProvider) {
         $routeProvider
