@@ -1940,10 +1940,7 @@ blockquote.pull-right:before {
     table-layout: fixed;
 }
 .dataTable tbody tr td{
-    max-width: 10px;
-    overflow-x: scroll;
-    text-overflow: ellipsis;
-    word-break: keep-all;
+    overflow-x: auto;
     white-space: nowrap
 }
 
