@@ -1,0 +1,247 @@
+[
+    {
+        "name": "总财务查询",
+        "id" : "1",
+        "export": true,
+        "query_option": [
+            {
+                "label": "站点",
+                "key": "site",
+                "type": "default_select",
+                "options": [
+                    {
+                     "id":"0",
+                     "label":"本地"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "统计方式",
+                "key":"stat_method",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"按日统计"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"按季统计"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"按年统计"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label": "起始时间",
+                "key": "begin_time",
+                "type": "date_picker",
+                "default": "today"
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "站点",
+                    "时间段",
+                    "新卡发行收款",
+                    "月卡续费",
+                    "小计",
+                    "临时车应收",
+                    "临时车实收",
+                    "临时车差额",
+                    "商圈",
+                    "总额",
+                    "新增车辆",
+                    "差额固定车辆"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
+    },
+    {
+        "name": "当班收费查询",
+        "id":"2",
+        "export": true,
+        "query_option": [
+            {
+                "label": "车牌",
+                "key" : "car_no",
+                "type": "input",
+                "place_holder": ""
+            },
+            {
+                "label": "车型",
+                "key" : "car_mode",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"小车"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"大车"
+                    }
+                    ,{
+                        "id":"3",
+                        "label":"超大车"
+                    }
+                    ,{
+                        "id":"4",
+                        "label":"其他车"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "操作员",
+                "key" : "operator",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"zfd"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "",
+                "key" : "option_method",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"扣费时间"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"有效期起"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"有效期止"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "起始时间",
+                "key" : "begin_time",
+                "type": "date_picker",
+                "default": "today"
+            },
+            {
+                "label": "终止时间",
+                "key" : "end_time",
+                "type": "date_picker",
+                "default": "today"
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "当班员",
+                    "上班时间",
+                    "最后收费时间",
+                    "交班时间",
+                    "现金金额(RMB)",
+                    "电子扣费金额(RMB)",
+                    "总额(RMB)",
+                    "出场车辆次数",
+                    "系统放行次数",
+                    "手动放行次数",
+                    "免费放行次数",
+                    "人工匹配次数"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
+
+    },
+    {
+        "name": "固定车缴费查询",
+        "id" : "3",
+        "export": true,
+        "query_option": [
+            {
+                "label": "站点",
+                "key":"site",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":0,
+                        "label":"本地"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "统计方式",
+                "key" : "stat_method",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"按日统计"
+                    },
+                    {
+                        "id":"1",
+                        "label":"按季统计"
+                    },
+                    {
+                        "id":"2",
+                        "label":"按年统计"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label": "起始时间",
+                "key" : "begin_time",
+                "type": "date_picker",
+                "default": "today"
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "车主",
+                    "车牌",
+                    "车型",
+                    "收费标准",
+                    "预交轮数",
+                    "应收",
+                    "实收",
+                    "差额",
+                    "扣费时间",
+                    "缴费开始时间",
+                    "缴费结束时间",
+                    "收款人",
+                    "备注"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
+
+    }
+]

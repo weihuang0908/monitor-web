@@ -1,0 +1,107 @@
+[
+    {
+        "name":"用户操作日志",
+        "id":"1",
+        "export": true,
+        "query_option": [
+            {
+                "label": "站点名",
+                "key":"site",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"本地"
+                    }
+                ]
+            },
+            {
+                "label": "事件类型",
+                "key":"event_type",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"操作日志"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"事件日志"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label": "事件子类型",
+                "key":"event_subtype",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "操作员",
+                "key":"operator",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"zfd"
+                    }
+                ]
+            },
+            {
+                "label": "事件内容",
+                "key":"event_content",
+                "type": "input"
+            },
+            {
+                "label":"",
+                "type":"group",
+                "contents":[
+                    {
+                        "label": "操作时间范围",
+                        "key":"op_time_begin",
+                        "type": "date_picker",
+                        "default": "today"
+                    },
+                    {
+                        "label": "到",
+                        "key":"op_time_end",
+                        "type": "date_picker",
+                        "default": "today"
+                    }
+                ]
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "站点名",
+                    "事件分类",
+                    "事件子类型",
+                    "操作内容",
+                    "操作员",
+                    "操作时间",
+                    "结果",
+                    "电脑ip"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
+    }
+]

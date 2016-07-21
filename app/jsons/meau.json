@@ -1,51 +1,43 @@
 [
     {
-        "name":"停车场报表",
-        "icon":"fa-table",
+        "name":"当前状态",
+        "icon":"fa-tachometer",
         "submeau":[
             {
-                "id":"finacial-sheet",
-                "name":"财务收费查询",
-                "page":"parking-report",
-                "json":"finacial-sheet"
+                "id":"account-state",
+                "name":"当前持仓/资金",
+                "page":"account-state"
             },
             {
-                "id":"other-sheet",
-                "name":"其他查询",
-                "page":"parking-report",
-                "json":"other-sheet"
+                "id":"trader-state",
+                "name":"交易程序状态",
+                "page":"trader-state"
             },
             {
-                "id":"event-sheet",
-                "name":"事件日志查询",
-                "page":"parking-report",
-                "json":"event-sheet"
+                "id":"strategy-state",
+                "name":"策略程序状态",
+                "page":"trader-state"
             }
         ]
     },
     {
-        "name":"常用操作",
-        "icon":"fa-tachometer",
+        "name":"历史记录",
+        "icon":"fa-table",
         "submeau":[
             {
-                "id":"add-car-owner",
-                "name":"新增车主",
-                "page":"add-car-owner"
+                "id":"trade-hist",
+                "name":"成交记录",
+                "page":"trade-hist"
             },
             {
-                "id":"car-owner-renew",
-                "name":"车主续费",
-                "page":"car-owner-renew"
+                "id":"plot-fund",
+                "name":"资金变化曲线",
+                "page":"plot-fund"
             },
             {
-                "id":"car-owner-info",
-                "name":"车主资料",
-                "page":"car-owner-info"
-            },
-            {
-                "id":"admin-record",
-                "name":"管理记录",
-                "page":"admin-record"
+                "id":"event-sheet",
+                "name":"系统日志",
+                "page":"system-log"
             }
         ]
     },
@@ -54,34 +46,19 @@
         "icon":"fa-gear",
         "submeau":[
             {
-                "id":"org-admin",
-                "name":"组织机构管理",
-                "page":"org-admin"
+                "id":"alarm-setting",
+                "name":"报警设置",
+                "page":"alarm-setting"
             },
             {
-                "id":"role-admin",
-                "name":"角色管理",
-                "page":"role-admin"
+                "id":"account-setting",
+                "name":"交易账号列表",
+                "page":"alarm-setting"
             },
             {
-                "id":"operator-admin",
-                "name":"操作员管理"
-            },
-            {
-                "id":"charge-admin",
-                "name":"收费设置"
-            },
-            {
-                "id":"permission-admin",
-                "name":"权限组管理"
-            },
-            {
-                "id":"sys-admin",
-                "name":"系统设置"
-            },
-            {
-                "id":"device-admin",
-                "name":"设备管理"
+                "id":"operator-setting",
+                "name":"操作员管理",
+                "page":"alarm-setting"
             }
         ]
     }

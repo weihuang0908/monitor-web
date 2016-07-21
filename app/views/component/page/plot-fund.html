@@ -1,0 +1,64 @@
+<div class="col-lg-12" ng-controller="PlotFundCtrl">
+    <div class="main-box clearfix">
+        <div class="tabs-wrapper profile-tabs">
+            <ul class="nav nav-tabs">
+                <li ng-repeat="tab in tabMeta" ng-class="{active:tab==currentTab}">
+                    <a data-toggle="tab" ng-click="onClickTab(tab)">{{tab.label}}</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="col-lg-12 tab-pane active">
+                    <form class="main-box-header form-inline" role="form" ng-submit="onSubmit()" ng-switch="currentTab.name">
+                        <div class="form-group"
+                             style="margin-right: 10px; margin-bottom: 5px">
+                            <label>从</label>
+                            <div class="input-group" ng-switch-when="date">
+                                <input type="date" class="form-control"
+                                       ng-model="time1">
+                            </div>
+                            <div class="input-group" ng-switch-when="hour">
+                                <input type="date" class="form-control"
+                                       ng-model="hour1">
+                            </div>
+                            <label>到</label>
+                            <div class="input-group"  ng-switch-when="date">
+                                <input type="date" class="form-control"
+                                       ng-model="time2">
+                            </div>
+                            <div class="input-group" ng-switch-when="hour">
+                                <input type="date" class="form-control"
+                                       ng-model="hour2">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success pull-right">查询</button>
+                    </form>
+                    <div class="main-box-body clearfix" style="padding-top: 20px">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-bar-chart-o fa-fw"></i> 资金变化曲线
+
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div fund-line
+                                     data='data'
+                                     xkey='xkey'
+                                     ykeys='ykeys'
+                                     labels='labels' style="height: 300px"></div>
+                            </div>
+                            <div class="panel-body">
+                            <div fund-bar
+                                 data='total_data'
+                                 xkey='xkey'
+                                 ykeys='["total"]'
+                                 labels='["total"]' style="height: 200px"></div>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

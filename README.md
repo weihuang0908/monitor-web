@@ -25,6 +25,7 @@ Running `grunt test` will run the unit tests with karma.
  6/ npm install
  7/ bower install
  
+ 
  安装结束之后
    grunt serve
  理论上会自动打开浏览器0.0.0.0:9000,如果挂掉了就在浏览器地址栏输入localhost:9000
@@ -45,6 +46,8 @@ Running `grunt test` will run the unit tests with karma.
     4/ git pull origin master
         从服务器端下载代码
     5/ git push origin master
-        向服务器上传代码(传到你自己的仓库)
+        向服务器上传代码(传到你自己的仓库
+    6/ 需要增加js时，使用bower install --save
+       再执行grunt build
         
         

@@ -1,0 +1,118 @@
+<div class="col-lg-12" ng-controller="AccountStateCtrl">
+    <div class="main-box clearfix">
+        <div class="tabs-wrapper profile-tabs">
+            <ul class="nav nav-tabs">
+                <li ng-repeat="tab in tabMeta" ng-class="{active:tab==currentTab}">
+                    <a data-toggle="tab" ng-click="onClickTab(tab)">{{tab.name}}</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="col-lg-12 tab-pane" ng-class="{active:currentTab.id==1}">
+                    <div class="main-box-body clearfix">
+                        <h3 style="margin-top: 10px"><span>查询条件</span></h3>
+                        <form class="form-inline" role="form" ng-submit="onSubmit()">
+                            <div class="form-group" ng-repeat="option in currentTab.query_option"
+                                 style="margin-right: 10px; margin-bottom: 5px">
+                                <!-- no group -->
+                                <label>{{option.label}}</label>
+                                <span ng-switch on="option.type">
+                                    <span ng-switch-when="default_select">
+                                        <select class="form-control" ng-model="query[option.key]"
+                                                ng-options="obj.id as obj.label for obj in option.options">
+                                        </select>
+                                    </span>
+                                </span>
+                            </div>
+                            <button type="submit" class="btn btn-success pull-right">查询</button>
+                        </form>
+
+                        <h3 style="margin: 10px"><span>查询结果</span></h3>
+
+                        <div class="table-responsive">
+                            <div id="table-example-fixed_wrapper" class="dataTables_wrapper no-footer">
+                                <table class="table table-hover dataTable table-striped" role="grid">
+                                    <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc"
+                                            ng-repeat="table_head in currentTab.view_option.table.table_head"
+                                            aria-controls="table-example-fixed" rowspan="1" colspan="1">
+                                            {{table_head}}
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr role="row"
+                                        ng-repeat="line in query_result
+                                            |paging:pager.index:pager.pageSize">
+                                        <td ng-repeat="table_name in currentTab.view_option.table.table_name"
+                                            title="{{line[table_name]}}">
+                                            {{line[table_name]}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!--pager-->
+                                <div ng-show="showPagination(query_result[submeau.id + currentTab.id].length)">
+                                    <pagination ng-model="pager.index" max-size="10"
+                                                items-per-page="pager.pageSize" class="pagination"
+                                                total-items="query_result[submeau.id + currentTab.id].length"
+                                                boundary-links="true">
+                                    </pagination>
+                                    <!--show N records-->
+                                    <div class="dataTables_length pull-right" id="table-example-fixed_length">
+                                        <label>
+                                            Show
+                                            <select name="table-example-fixed_length"
+                                                    ng-model="pager.pageSize"
+                                                    ng-options="obj as obj for obj in entries_options">
+                                            </select>
+                                            entries
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 tab-pane" ng-class="{active:currentTab.id==2}">
+                    <header class="main-box-header clearfix">
+                        <h2 class="pull-left">当前资金</h2>
+                        <div id="reportrange" class="pull-right daterange-filter">
+                            <i class="icon-calendar"></i>
+                            <span ng-click="onSubmit()">刷新</span>
+                        </div>
+                    </header>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th class="sorting_asc"
+                                    ng-repeat="table_head in table.table_head"
+                                    aria-controls="table-example-fixed" rowspan="1" colspan="1">
+                                    {{table_head}}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="line in query_result
+                                            |paging:pager.index:pager.pageSize">
+                                <td ng-repeat="table_name in table.table_name"
+                                    title="{{line[table_name]}}" ng-switch="$index">
+                                    <div ng-switch-when="1">
+                                        {{line[table_name]|date:'yyyy-MM-dd HH:mm:ss'}}
+                                    </div>
+                                    <div ng-switch-default>
+                                        {{line[table_name]}}
+                                    </div>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

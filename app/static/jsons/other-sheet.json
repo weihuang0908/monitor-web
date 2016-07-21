@@ -1,0 +1,353 @@
+[
+    {
+        "name":"出入场车辆查询",
+        "id":"1",
+        "export": true,
+        "query_option": [
+            {
+                "label": "出入状态",
+                "key":"io_status",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"本地"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"入场"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"出场"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "车主性质",
+                "key":"car_owner_status",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"临时车主"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"月卡车主"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"会员临停"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label":"",
+                "type":"group",
+                "contents":[
+                    {
+                        "label": "",
+                        "type": "default_select",
+                        "key":"car_id_status",
+                        "options": [
+                            {
+                                "id":"0",
+                                "label":"进场车牌"
+                            }
+                            ,{
+                                "id":"1",
+                                "label":"出场车牌"
+                            }
+                            ,{
+                                "id":"2",
+                                "label":"登记车牌"
+                            }
+                        ],
+                        "default": 1
+                    },
+                    {
+                        "label": "",
+                        "key":"car_id",
+                        "type": "input",
+                        "default": 1
+                    }
+                ]
+            },
+            {
+                "label": "出场方式",
+                "type": "default_select",
+                "key":"io_method",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"系统放行"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"手动放行"
+                    }
+                    ,{
+                        "id":"3",
+                        "label":"免费放行"
+                    }
+                    ,{
+                        "id":"4",
+                        "label":"人工匹配放行"
+                    }
+                    ,{
+                        "id":"5",
+                        "label":"保安未确认"
+                    }
+                    ,{
+                        "id":"6",
+                        "label":"商圈出场"
+                    }
+                    ,{
+                        "id":"7",
+                        "label":"中央收费出场"
+                    }
+                    ,{
+                        "id":"8",
+                        "label":"最大收费出场"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label": "入口通道",
+                "key":"in_channel",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"入口"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label": "出口通道",
+                "key":"out_channel",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"出口"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label":"",
+                "type":"group",
+                "contents":[
+                    {
+                        "label": "金额",
+                        "key":"charge_status",
+                        "type": "default_select",
+                        "options": [
+                            {
+                                "id":"0",
+                                "label":"应收"
+                            }
+                            ,{
+                                "id":"1",
+                                "label":"实收"
+                            }
+                        ],
+                        "default": 1
+                    },
+                    {
+                        "label": "",
+                        "key":"eqlq",
+                        "type": "default_select",
+                        "options": [
+                            {
+                                "id":"0",
+                                "label":"大于"
+                            }
+                            ,{
+                                "id":"1",
+                                "label":"小于"
+                            }
+                            ,{
+                                "id":"2",
+                                "label":"等于"
+                            }
+                        ],
+                        "default": 1
+                    },
+                    {
+                        "label": "",
+                        "key":"money",
+                        "type": "input"
+                    }
+                ]
+            },
+            {
+                "label": "收费员",
+                "key":"charger",
+                "type": "default_select",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"所有"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"zfd"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label":""
+                ,"type":"group"
+                ,"contents":[
+                {
+                    "label": "时间范围",
+                    "key":"time_interval",
+                    "type": "default_select",
+                    "options": [
+                        {
+                            "id":"0",
+                            "label":"入场和出场"
+                        }
+                        ,{
+                            "id":"1",
+                            "label":"入场"
+                        }
+                        ,{
+                            "id":"2",
+                            "label":"出场"
+                        }
+                    ],
+                    "default": 1
+                },
+                {
+                    "label": "",
+                    "key":"time_begin",
+                    "type": "date_picker",
+                    "default": "today"
+                },
+                {
+                    "label": "到",
+                    "key":"time_end",
+                    "type": "date_picker",
+                    "default": "today"
+                }
+            ]
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "出入状态",
+                    "车主性质",
+                    "登记车牌",
+                    "进场车牌",
+                    "出场车牌",
+                    "入口",
+                    "出口",
+                    "出场方式",
+                    "进场时间",
+                    "出场时间",
+                    "停车时长",
+                    "图片",
+                    "预交费",
+                    "商圈优惠",
+                    "应收",
+                    "实收"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
+
+    },
+    {
+        "name":"车主信息查询",
+        "id":"2",
+        "export": true,
+        "query_option": [
+            {
+                "label": "站点",
+                "type": "default_select",
+                "key":"site",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"本地"
+                    }
+                ],
+                "default": 0
+            },
+            {
+                "label": "统计方式",
+                "type": "default_select",
+                "key":"stat_method",
+                "options": [
+                    {
+                        "id":"0",
+                        "label":"按日统计"
+                    }
+                    ,{
+                        "id":"1",
+                        "label":"按月统计"
+                    }
+                    ,{
+                        "id":"2",
+                        "label":"按季统计"
+                    }
+                    ,{
+                        "id":"3",
+                        "label":"按年统计"
+                    }
+                ],
+                "default": 1
+            },
+            {
+                "label": "起始时间",
+                "key":"begin_time",
+                "type": "date_picker",
+                "default": "today"
+            }
+        ],
+        "view_option": {
+            "table":{
+                "table_head":[
+                    "用户名",
+                    "用户编号",
+                    "卡片状态",
+                    "性别",
+                    "车牌",
+                    "车型",
+                    "车位号",
+                    "手机号",
+                    "部门",
+                    "地址",
+                    "过期时间"
+                ]
+            },
+            "footer":{
+                "records_per_page":20
+            }
+        }
+    }
+]

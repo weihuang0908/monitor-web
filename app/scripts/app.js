@@ -15,10 +15,20 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch',
+        'ngMorris',
         'ui.bootstrap',
         'sliceFilter'
     ])
+    .constant('AUTH_EVENTS', {
+        loginSuccess: 'auth-login-success',
+        loginFail: 'auth-login-fail',
+        logoutSuccess: 'auth-logout-success',
+        sessionTimeout: 'auth-session-timeout'
+    })
+    .constant('USER_ROLES', {
+        root: 'root',
+        user: 'user'
+    })
     .config(function ($routeProvider) {
         $routeProvider
             .when('/main', {
@@ -40,4 +50,19 @@ angular
             .otherwise({
                 redirectTo: '/login'
             });
-    });
+    })
+    .run(['$rootScope', '$location', '$cookieStore', '$http',
+        function ($rootScope, $location, $cookieStore, $http) {
+            // keep user logged in after page refresh
+            $rootScope.globals = $cookieStore.get('globals') || {};
+            if ($rootScope.globals.currentUser) {
+                $http.defaults.headers.common['Authorization'] = 'token ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+            }
+
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                // redirect to login page if not logged in
+                if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+                    $location.path('/login');
+                }
+            });
+        }]);

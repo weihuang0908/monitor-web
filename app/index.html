@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="bower_components/nanoscroller/bin/css/nanoscroller.css" />
     <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="bower_components/morrisjs/morris.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" type="text/css" href="styles/compiled/theme_styles.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/libs/nanoscroller.css"/>
     <link type="image/x-icon" href="images/favicon.png" rel="shortcut icon"/>
 
 
@@ -25,25 +26,13 @@
 
 
   </head>
-  <body ng-app="parkProgApp" ng-init="submeau={page:'add-car-owner'}" class="theme-whbl  pace-done fixed-header">
+  <body ng-app="parkProgApp" ng-init="submeau={page:'account-state'}" class="theme-whbl  pace-done fixed-header">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
      <!--###### Add your site or application content here ######-->
     <div ng-view=""></div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -60,6 +49,12 @@
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="bower_components/eve/eve.js"></script>
+    <script src="bower_components/raphael/raphael.min.js"></script>
+    <script src="bower_components/mocha/mocha.js"></script>
+    <script src="bower_components/morrisjs/morris.js"></script>
+    <script src="bower_components/ngmorris/src/ngMorris.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -69,10 +64,16 @@
     <script src="scripts/lib/scripts.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/account/login/loginControl.js"></script>
+    <script src="scripts/account/login/authService.js"></script>
+    <script src="scripts/account/login/session.js"></script>
     <script src="scripts/component/navbar/navbar.js"></script>
-    <script src="scripts/component/page/parking-report.js"></script>
+    <script src="scripts/component/page/account-state.js"></script>
+    <script src="scripts/component/page/trader-state.js"></script>
+    <script src="scripts/component/page/trade-hist.js"></script>
+    <script src="scripts/component/page/plot-fund.js"></script>
+    <script src="scripts/component/page/system-log.js"></script>
     <script src="scripts/component/page/tab-service.js"></script>
-    <script src="scripts/component/page/pager-service.js"></script>
+    <script src="scripts/component/page/directive.js"></script>
     <script src="scripts/component/page/query-service.js"></script>
     <script src="scripts/component/filter/slice-filter.js"></script>
     <script src="scripts/main/main.js"></script>
