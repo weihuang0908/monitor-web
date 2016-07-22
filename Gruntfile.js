@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             proxies: [
                 {
                     context: '/stock_monitor', // path on grunt server
-                    host: 'localhost', // remote server
+                    host: '10.0.1.232', // remote server
                     port: 5000, // remote port
                     https: false,
                     changeOrigin: true
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
                         ];
                     }
                 }
-            },
+            }
             /*
              dist: {
              options: {
@@ -130,7 +130,7 @@ module.exports = function (grunt) {
             },
             server: {
                 options: {
-                    map: true,
+                    map: true
                 },
                 files: [{
                     expand: true,
@@ -312,7 +312,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // Put files not handled in other tasks here
+        // Copies remaining files to places other tasks can use
         copy: {
             dist: {
                 files: [{
@@ -320,7 +320,23 @@ module.exports = function (grunt) {
                     dot: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
-                    src: '**'
+                    src: [
+                        '*.{ico,png,txt}',
+                        '.htaccess',
+                        '*.html',
+                        'images/{,*/}*.{webp}',
+                        'styles/fonts/{,*/}*.*'
+                    ]
+                }, {
+                    expand: true,
+                    cwd: '.tmp/images',
+                    dest: '<%= yeoman.dist %>/images',
+                    src: ['generated/*']
+                }, {
+                    expand: true,
+                    cwd: 'bower_components/bootstrap/dist',
+                    src: 'fonts/*',
+                    dest: '<%= yeoman.dist %>'
                 }]
             },
             styles: {
@@ -343,12 +359,6 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
-        },
-        // Replace Google CDN references
-        cdnify: {
-            dist: {
-                html: ['<%= yeoman.dist %>/*.html']
-            }
         },
         // Test settings
         karma: {
