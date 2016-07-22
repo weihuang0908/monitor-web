@@ -50,10 +50,10 @@
                                 </table>
 
                                 <!--pager-->
-                                <div ng-show="showPagination(query_result[submeau.id + currentTab.id].length)">
+                                <div ng-show="showPagination(query_result.length)">
                                     <pagination ng-model="pager.index" max-size="10"
                                                 items-per-page="pager.pageSize" class="pagination"
-                                                total-items="query_result[submeau.id + currentTab.id].length"
+                                                total-items="query_result.length"
                                                 boundary-links="true">
                                     </pagination>
                                     <!--show N records-->
