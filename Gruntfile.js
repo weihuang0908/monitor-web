@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             proxies: [
                 {
                     context: '/stock_monitor', // path on grunt server
-                    host: '10.0.1.232', // remote server
+                    host: '10.0.1.232', // remote server 10.0.1.232
                     port: 5000, // remote port
                     https: false,
                     changeOrigin: true

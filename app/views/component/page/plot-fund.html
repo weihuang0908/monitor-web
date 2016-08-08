@@ -14,20 +14,20 @@
                             <label>从</label>
                             <div class="input-group" ng-switch-when="date">
                                 <input type="date" class="form-control"
-                                       ng-model="time1">
+                                       ng-model="$parent.time1">
                             </div>
                             <div class="input-group" ng-switch-when="hour">
                                 <input type="date" class="form-control"
-                                       ng-model="hour1">
+                                       ng-model="$parent.hour1">
                             </div>
                             <label>到</label>
                             <div class="input-group"  ng-switch-when="date">
                                 <input type="date" class="form-control"
-                                       ng-model="time2">
+                                       ng-model="$parent.time2">
                             </div>
                             <div class="input-group" ng-switch-when="hour">
                                 <input type="date" class="form-control"
-                                       ng-model="hour2">
+                                       ng-model="$parent.hour2">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success pull-right">查询</button>
@@ -35,7 +35,7 @@
                     <div class="main-box-body clearfix" style="padding-top: 20px">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <i class="fa fa-bar-chart-o fa-fw"></i> 资金变化曲线
+                                <i class="fa fa-bar-chart-o fa-fw"></i> 每个账户
 
                             </div>
                             <!-- /.panel-heading -->
@@ -46,8 +46,14 @@
                                      ykeys='ykeys'
                                      labels='labels' style="height: 300px"></div>
                             </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-bar-chart-o fa-fw"></i> 总和
+
+                            </div>
                             <div class="panel-body">
-                            <div fund-bar
+                            <div fund-line
                                  data='total_data'
                                  xkey='xkey'
                                  ykeys='["total"]'

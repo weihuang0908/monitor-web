@@ -21,6 +21,7 @@ angular.module('parkProgApp').controller('PlotFundCtrl', ['$scope',
         $scope.onSubmit = function(){
             var url = "plot-fund/";
             if($scope.currentTab.name=="date"){
+                console.log("date",$scope.time1);
                 $scope.query = {"start":$scope.time1,"end":$scope.time2};
             }else{
                 $scope.query = {"start":$scope.hour1,"end":$scope.hour2};

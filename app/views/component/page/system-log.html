@@ -11,11 +11,57 @@
                     <div class="main-box-body clearfix">
                         <h3 style="margin-top: 10px"><span>查询条件</span></h3>
                         <form class="form-inline" role="form" ng-submit="onSubmit()">
-
-                        <select class="form-control" ng-model="account_name"
+                        <label >账户</label>
+                        <select class="form-control" ng-model="account_name" style="margin-right: 10px"
                                                 ng-options="obj for obj in account_name_list">
                         </select>
+                            <div class="form-group"
+                                 style="margin-right: 10px">
+                                <label>从</label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control"
+                                           ng-model="time1">
+                                </div>
+                                <label>到</label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control"
+                                           ng-model="time2">
+                                </div>
+                            </div>
+                        <label style="margin-right: 10px">日志级别</label>
+                        <div class="form-group">
+                            <div class="checkbox-nice checkbox-inline">
+                                <input type="checkbox" id="checkbox-inl-1" ng-model="checkbox.E">
+                                <label for="checkbox-inl-1" class="label label-danger">
+                                    E
+                                </label>
+                            </div>
+                            <div class="checkbox-nice checkbox-inline">
+                                <input type="checkbox" id="checkbox-inl-2" ng-model="checkbox.F">
+                                <label for="checkbox-inl-2" class="label label-danger">
+                                    F
+                                </label>
+                            </div>
+                            <div class="checkbox-nice checkbox-inline">
+                                <input type="checkbox" id="checkbox-inl-3" ng-model="checkbox.W">
+                                <label for="checkbox-inl-3" class="label label-warning">
+                                    W
+                                </label>
+                            </div>
+                            <div class="checkbox-nice checkbox-inline">
+                                <input type="checkbox" id="checkbox-inl-4" ng-model="checkbox.D">
+                                <label for="checkbox-inl-4" class="label label-success">
+                                    D
+                                </label>
+                            </div>
+                            <div class="checkbox-nice checkbox-inline">
+                                <input type="checkbox" id="checkbox-inl-5" ng-model="checkbox.M">
+                                <label for="checkbox-inl-5" class="label label-primary">
+                                    M
+                                </label>
+                            </div>
 
+                        </div>
                             <button type="submit" class="btn btn-success pull-right">查询</button>
                         </form>
 
@@ -35,8 +81,7 @@
                                     </thead>
                                     <tbody>
                                     <tr role="row"
-                                        ng-repeat="line in query_result
-                                            |paging:pager.index:pager.pageSize">
+                                        ng-repeat="line in query_result">
                                         <td ng-repeat="table_name in table.table_name"
                                             title="{{line[table_name]}}" ng-switch="$index">
                                             <div ng-switch-when="1" ng-class="state_filter(line[table_name])" style="width: 10%">
@@ -53,10 +98,10 @@
                                     </tbody>
                                 </table>
                                 <!--pager-->
-                                <div ng-show="showPagination(query_result.length)">
+                                <div ng-show="showPagination(total_count)">
                                     <pagination ng-model="pager.index" max-size="10"
                                                 items-per-page="pager.pageSize" class="pagination"
-                                                total-items="query_result.length"
+                                                total-items="total_count" ng-change="changePage()"
                                                 boundary-links="true">
                                     </pagination>
                                     <!--show N records-->
@@ -64,7 +109,7 @@
                                         <label>
                                             Show
                                             <select name="table-example-fixed_length"
-                                                    ng-model="pager.pageSize"
+                                                    ng-model="pager.pageSize" ng-change="changePage()"
                                                     ng-options="obj as obj for obj in entries_options">
                                             </select>
                                             entries

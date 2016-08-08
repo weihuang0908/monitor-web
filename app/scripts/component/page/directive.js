@@ -32,8 +32,8 @@ angular.module('parkProgApp').directive('queryForm',function(){
                 var colors;
                 if (scope.colors === void 0 || scope.colors === '') {
                     colors = null;
-                } else {
-                    colors = JSON.parse(scope.lineColors);
+                }else{
+                    colors = scope.colors;
                 }
                 scope.$watch('data', function () {
                     if (scope.data) {
@@ -46,7 +46,7 @@ angular.module('parkProgApp').directive('queryForm',function(){
                                 ymin: "auto",
                                 yLabelFormat:function(y){var num = new Number(y);return num.toFixed(4)},
                                 labels: scope.labels,
-                                colors: colors || ['#0b62a4', '#7a92a3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed']
+                                lineColors: colors || ['#0b62a4', '#7a92a3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed']
                             });
                         } else {
                             scope.morris.setData(scope.data);
@@ -56,7 +56,7 @@ angular.module('parkProgApp').directive('queryForm',function(){
             }
         };
     })
-    .directive('fundBar', function() {
+    .directive('fundArea', function() {
         return {
             restrict: 'AE',
             scope: {
@@ -76,7 +76,7 @@ angular.module('parkProgApp').directive('queryForm',function(){
                 scope.$watch('data', function () {
                     if (scope.data) {
                         if (!scope.morris) {
-                            scope.morris = new Morris.Bar({
+                            scope.morris = new Morris.Area({
                                 element: elem,
                                 data: scope.data,
                                 xkey: scope.xkey,

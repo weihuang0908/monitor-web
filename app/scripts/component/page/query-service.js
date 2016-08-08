@@ -15,7 +15,7 @@ angular.module('parkProgApp').factory('queryFactory',
             }, function errorCallback(resp){
                 if(resp.status==401){
                     $location.path("/login");
-                    return;
+                    return resp;
                 }
                 return resp;
             });

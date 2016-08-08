@@ -57,8 +57,9 @@ angular.module('parkProgApp').controller('AccountStateCtrl', ['$scope',
         $scope.onSubmit = function(){
             var key = $scope.options[0].key;
             var account_name = $scope.query[key];// $scope.query["account_state"]
+            var url = "";
             if($scope.currentTab.id == 1){
-                var url = "account_state/" + account_name;
+                url = "account_state/" + account_name;
                 queryFactory.sendQuery(url).then(function (resp) {
                     if (resp.data["ok"]==1){
                         $scope.query_result = resp.data[key];

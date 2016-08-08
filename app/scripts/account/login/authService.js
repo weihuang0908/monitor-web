@@ -2,7 +2,7 @@
  * Created by weihuang on 15/8/5.
  */
 angular.module('parkProgApp').factory('AuthService',
-    function ($rootScope,$http,$cookieStore,Session) {
+    function ($rootScope,$http,$cookieStore,$timeout,Session) {
         var service = {};
         service.login = function(credential){
             url = "/stock_monitor/login";
@@ -10,7 +10,7 @@ angular.module('parkProgApp').factory('AuthService',
                 method : 'POST',
                 url : url,
                 params : credential
-            }).success(function(res){
+            }).then(function(res){
                 return res;
             });
         };
