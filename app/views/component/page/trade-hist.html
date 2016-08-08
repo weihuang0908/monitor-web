@@ -15,7 +15,19 @@
                             <select class="form-control" ng-model="account_name"
                                     ng-options="obj for obj in account_name_list">
                             </select>
-
+                            <div class="form-group"
+                                 style="margin-right: 10px">
+                                <label>从</label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control"
+                                           ng-model="time1">
+                                </div>
+                                <label>到</label>
+                                <div class="input-group">
+                                    <input type="date" class="form-control"
+                                           ng-model="time2">
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-success pull-right">查询</button>
                         </form>
 
@@ -50,10 +62,10 @@
                                 </table>
 
                                 <!--pager-->
-                                <div ng-show="showPagination(query_result.length)">
+                                <div ng-show="showPagination(total_count)">
                                     <pagination ng-model="pager.index" max-size="10"
                                                 items-per-page="pager.pageSize" class="pagination"
-                                                total-items="query_result.length"
+                                                total-items="total_count" ng-change="changePage()"
                                                 boundary-links="true">
                                     </pagination>
                                     <!--show N records-->
@@ -61,7 +73,7 @@
                                         <label>
                                             Show
                                             <select name="table-example-fixed_length"
-                                                    ng-model="pager.pageSize"
+                                                    ng-model="pager.pageSize" ng-change="changePage()"
                                                     ng-options="obj as obj for obj in entries_options">
                                             </select>
                                             entries

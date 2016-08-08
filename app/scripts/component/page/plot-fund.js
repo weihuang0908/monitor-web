@@ -13,7 +13,7 @@ angular.module('parkProgApp').controller('PlotFundCtrl', ['$scope',
         $scope.time1.setMonth($scope.time2.getMonth()-1);
         $scope.hour1 = new Date();
         $scope.hour2 = new Date();
-        $scope.hour1.setDate($scope.time2.getDate()-1);
+        $scope.hour1.setDate($scope.time2.getDate()-7);
         $scope.onClickTab = function(tab){
             $scope.currentTab = tab;
             $scope.onSubmit();
