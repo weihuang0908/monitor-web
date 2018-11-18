@@ -36,6 +36,11 @@ module.exports = function(config) {
       'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/metisMenu/dist/metisMenu.js',
+      'bower_components/eve/eve.js',
+      'bower_components/raphael/raphael.min.js',
+      'bower_components/mocha/mocha.js',
+      'bower_components/morrisjs/morris.js',
+      'bower_components/ngmorris/src/ngMorris.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

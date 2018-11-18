@@ -11,6 +11,7 @@ angular.module('parkProgApp').controller('LoginCtrl', ['$scope','AUTH_EVENTS', '
             AuthService.login(credential).then(
                 function(resp){
                     data = resp.data;
+
                     if(data.ok==1){
                         $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
                         AuthService.SetCredentials(data.username,data.token);
